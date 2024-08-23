@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ANDROID_COMPILE_SDK: 33
+      ANDROID_COMPILE_SDK: ${{ secrets.ANDROID_COMPILE_SDK }}
       ANDROID_BUILD_TOOLS: 33.0.0
-      JAVA_VERSION: 1.8
+      JAVA_VERSION: 18
 
     steps:
       - name: Checkout code
