@@ -1,0 +1,13 @@
+name: Check event Filter
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  test_branch_filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
