@@ -37,7 +37,6 @@ jobs:
         run: ./gradlew lint
 
   test:
-    needs: lint
     runs-on: ubuntu-latest
     environment: testing
     env:
@@ -71,7 +70,7 @@ jobs:
           cp -r app/build/test-results/testDebugUnitTest/* test-results/unit/
 
       - name: Archive Unit Test Results
-        if: failure() $$ steps.run_tests.outcome == 'failure'
+        if: failure() && steps.run_tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: unit-test-results
