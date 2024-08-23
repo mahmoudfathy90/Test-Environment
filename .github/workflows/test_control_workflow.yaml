@@ -71,7 +71,7 @@ jobs:
           cp -r app/build/test-results/testDebugUnitTest/* test-results/unit/
 
       - name: Archive Unit Test Results
-        if: steps.run_tests.outcome == 'failure'
+        if: failure() $$ steps.run_tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: unit-test-results
