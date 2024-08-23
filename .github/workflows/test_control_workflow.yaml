@@ -65,6 +65,7 @@ jobs:
         run: ./gradlew test
 
       - name: Save Unit Test Output
+        if: failure() && steps.run_tests.outcome == 'failure'
         run: |
           mkdir -p test-results/unit
           cp -r app/build/test-results/testDebugUnitTest/* test-results/unit/
