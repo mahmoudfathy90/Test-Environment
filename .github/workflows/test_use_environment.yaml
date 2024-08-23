@@ -15,7 +15,7 @@ jobs:
     env:
       ANDROID_COMPILE_SDK: 33
       ANDROID_BUILD_TOOLS: 33.0.0
-      JAVA_VERSION: 11
+      JAVA_VERSION: 1.8
 
     steps:
       - name: Checkout code
