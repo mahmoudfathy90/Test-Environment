@@ -116,3 +116,13 @@ jobs:
 
       - name: Print environment variable
         run: echo "The compile SDK is set to $ANDROID_COMPILE_SDK and the user name is ${{ env.USER_NAME }}"
+
+  report:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: output information
+        run: |
+          echo "some thing went wrong"
+          echo "${{ github }}"
+          
