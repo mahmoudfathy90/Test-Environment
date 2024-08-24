@@ -11,6 +11,9 @@ jobs:
     strategy:
       matrix:
         operation-system: [ubuntu-latest, windows-latest]
+        exclude:
+            - operation-system:  windows-latest
+
     runs-on: ${{ matrix.operation-system }}
     outputs:
       script-file: ${{ steps.publish.outputs.output-file }}
