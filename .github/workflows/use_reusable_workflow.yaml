@@ -65,4 +65,4 @@ jobs:
 
   deploy:
     needs: test
-    uses: ./.github/workflows/reusable/yaml
+    uses: ./.github/workflows/reusable.yaml
