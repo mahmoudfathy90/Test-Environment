@@ -19,6 +19,9 @@ jobs:
       script-file: ${{ steps.publish.outputs.output-file }}
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: load and cache actions
         uses: ./.github/actions/cached_action
 
