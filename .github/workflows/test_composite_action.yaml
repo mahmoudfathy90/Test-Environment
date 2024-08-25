@@ -52,6 +52,3 @@ jobs:
           name: unit-test-reports
           path: app/build/reports/tests/testDebugUnitTest
 
-  deploy:
-    needs: test
-    uses: ./.github/workflows/reusable.yaml
